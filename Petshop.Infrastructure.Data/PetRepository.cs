@@ -31,9 +31,9 @@ namespace Petshop.Core.DomainService.Implementation
         {
             FakeDB.RemovePet(id);
         }
-        public void UpdatePetPrice(int id,double price)
+        public Pet UpdatePetPrice(int id,double price)
         {
-            FakeDB.UpdatePetPrice(id,price);
+          return  FakeDB.UpdatePetPrice(id,price);
         }
     }
 }

@@ -74,12 +74,36 @@ namespace Petshop.RestAPI.Controllers
         {
             try
             {
-                return Created("Successfully created the following pet: ", _petservice.NewPet(pet));
+                return Created("Pet Created", _petservice.NewPet(pet));
             }
             catch (Exception e)
             {
                 return StatusCode(500, e.Message);
             }
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult<Pet> Put(int id, [FromBody] Pet updatedPet)
+        {
+            if (updatedPet.ID != id)
+            {
+                return BadRequest("Id's mismatch");
+            }
+            if (updatedPet.Price == 0)
+
+            {
+                return BadRequest("Put Price");
+            }
+            try
+            {
+                Pet p = _petservice.UpdatePetPrice(id, updatedPet.Price);
+                return Accepted("Pet updated", p);
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            } 
+
         }
 
 
@@ -90,9 +114,7 @@ namespace Petshop.RestAPI.Controllers
 
 
 
-
-
-    }
+        }
 }
     
 

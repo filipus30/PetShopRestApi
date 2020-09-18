@@ -11,7 +11,7 @@ namespace Petshop.Core.ApplicationService
         public void DeletePet(int id);
         public IEnumerable<Pet> GetPetsByType(string type);
         public List<Pet> GetPetsByPrice();
-        public void UpdatePetPrice(int id, double price);
+        public Pet UpdatePetPrice(int id, double price);
         public Pet GetPetById(int id);
         public Pet NewPet(Pet pet);
         

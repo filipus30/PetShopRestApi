@@ -75,9 +75,17 @@ namespace Petshop.Core.ApplicationService.Implementation
             return filtered;
         }
 
-        public void UpdatePetPrice(int id, double price)
+        public Pet UpdatePetPrice(int id, double price)
         {
-            _petRepository.UpdatePetPrice(id, price);
+            var p = _petRepository.UpdatePetPrice(id, price);
+            if (p == null)
+            {
+                throw new Exception(message: "pet not found");
+            }
+            else
+            {
+                return _petRepository.UpdatePetPrice(id, price);
+            }
         }
         public List<Pet> SearchForPet(FilterModel filter)
         {

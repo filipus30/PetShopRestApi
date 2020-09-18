@@ -138,10 +138,11 @@ namespace Petshop.Infrastructure.Data
         {
             PetsData.RemoveAll(x => x.ID == id);
         }
-        public static void UpdatePetPrice(int id,double price)
+        public static Pet UpdatePetPrice(int id,double price)
         {
             var obj = PetsData.FirstOrDefault(x => x.ID == id);
             if (obj != null) obj.Price = price;
+            return obj;
         }
 
         public static Pet FindPetById(int id)
