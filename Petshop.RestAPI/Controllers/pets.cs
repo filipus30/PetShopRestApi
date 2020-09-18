@@ -56,8 +56,41 @@ namespace Petshop.RestAPI.Controllers
         [HttpGet("{Id}")]
         public ActionResult<Pet> Get(int Id)
         {
-            return _petservice.GetPetById(Id);
+            try
+            {
+                return _petservice.GetPetById(Id);
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+
         }
+
+
+
+        [HttpPost]
+        public ActionResult<Pet> Post([FromBody] Pet pet)
+        {
+            try
+            {
+                return Created("Successfully created the following pet: ", _petservice.NewPet(pet));
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
 
     }
 }

@@ -38,12 +38,28 @@ namespace Petshop.Core.ApplicationService.Implementation
 
         public Pet GetPetById(int id)
         {
-            return _petRepository.FindPetById(id);
+            Pet p = _petRepository.FindPetById(id);
+           if(p == null)
+            {
+                throw new Exception("Wrong Id");
+            }
+           else
+            {
+                return p;
+            }
         }
 
         public List<Pet> GetPets()
         {
-            return (List<Pet>)_petRepository.ReadPets();
+            var v = _petRepository.ReadPets();
+            if (v == null)
+
+                throw new Exception("No Pets Found");
+            else
+                {
+                return v.ToList();
+                }
+                
         }
 
         public List<Pet> GetPetsByPrice()
@@ -78,6 +94,18 @@ namespace Petshop.Core.ApplicationService.Implementation
             }
         }
 
+        public Pet NewPet(Pet pet)
+        {
+            if (pet.Name == null)
+            {
+                throw new InvalidDataException(message: "Name cannot be null");
+            }
+            else
+            {
+                _petRepository.AddPet(pet);
+                return pet;
+            }
 
+        }
     }
 }
