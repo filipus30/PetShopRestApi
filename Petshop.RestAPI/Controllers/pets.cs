@@ -28,27 +28,32 @@ namespace Petshop.RestAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Pet>> Get([FromQuery] FilterModel filter)
         {
-            if(string.IsNullOrEmpty(filter.SearchTerm) && string.IsNullOrEmpty(filter.SearchValue))
-            try
+            if (string.IsNullOrEmpty(filter.SearchTerm) && string.IsNullOrEmpty(filter.SearchValue))
             {
-                return Ok(_petservice.GetPets());
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, "Internal Server Error");
-            }
-            else
                 try
                 {
-                 return Ok(_petservice.GetPets());  // return Ok(_petservice.GetPetsFiltered(filter));
+                    return Ok(_petservice.GetPets());
                 }
                 catch (Exception)
                 {
                     return StatusCode(500, "Internal Server Error");
                 }
+            }
 
+            else
+            {
+               
+                    try
+                    {
+                        return Ok(_petservice.GetPetsFiltered(filter));
+                    }
+                    catch (Exception)
+                    {
+                        return StatusCode(500, "Internal Server Error");
+                    }
+                
+            }
         }
-
 
 
 

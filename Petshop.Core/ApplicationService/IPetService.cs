@@ -14,6 +14,7 @@ namespace Petshop.Core.ApplicationService
         public Pet UpdatePetPrice(int id, double price);
         public Pet GetPetById(int id);
         public Pet NewPet(Pet pet);
-        
+        public List<Pet> GetPetsFiltered(FilterModel filter);
+
     }
 }

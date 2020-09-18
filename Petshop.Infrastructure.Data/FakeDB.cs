@@ -10,7 +10,7 @@ namespace Petshop.Infrastructure.Data
     {
         public static IEnumerable<Pet> allThePets { get; set; }
         public static IEnumerable<Owner> allTheOwners { get; set; }
-        
+        public static List<Pet> filtered = new List<Pet>();
         public static List<Pet> PetsData = new List<Pet>();
         public static int theOwnerCount { get; set; }
         private static int Id = 1;
@@ -152,7 +152,17 @@ namespace Petshop.Infrastructure.Data
             return pet;
         }
 
+        public static IEnumerable<Pet> GetPetsFilteredByName(string name)
+        {
+            filtered = PetsData.FindAll(x => x.Name.ToLower() == name.ToLower()).ToList();
+            return filtered;
+        }
 
+        public static IEnumerable<Pet> GetPetsFilteredByColor(string color)
+        {
+            filtered = PetsData.FindAll(x => x.Color.ToLower() == color.ToLower()).ToList();
+            return filtered;
+        }
 
 
         internal static Owner updateOwnerLastName(Owner updatedOwner, string updateValue)

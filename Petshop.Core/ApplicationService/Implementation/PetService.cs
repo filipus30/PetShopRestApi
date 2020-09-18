@@ -95,16 +95,22 @@ namespace Petshop.Core.ApplicationService.Implementation
                 return _petRepository.UpdatePetPrice(id, price);
             }
         }
-        public List<Pet> SearchForPet(FilterModel filter)
+        public List<Pet> GetPetsFiltered(FilterModel filter)
         {
-            string searchValue = filter.SearchValue;
-            string toSearchString = filter.SearchTerm.ToLower();
-            switch (toSearchString)
+            string value = filter.SearchValue;
+            string filterby = filter.SearchTerm.ToLower();
+            switch (filterby)
             {
                 case "name":
-                    return _petRepository.ReadPets().ToList();
+                    var v = _petRepository.FindPetsByName(value).ToList();
+                    if (v.Count == 0)
+                        throw new Exception(message: "no results found");
+                    return v;
                 case "color":
-                    return _petRepository.ReadPets().ToList();
+                    var b = _petRepository.FindPetsByColor(value).ToList();
+                    if (b.Count == 0)
+                        throw new Exception(message: "no results found");
+                    return b;
                 default:
                     throw new InvalidDataException(message: "search for name or color");
             }
@@ -123,5 +129,7 @@ namespace Petshop.Core.ApplicationService.Implementation
             }
 
         }
+
+        
     }
 }

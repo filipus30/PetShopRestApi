@@ -11,5 +11,7 @@ namespace Petshop.Core
         public Pet RemovePet(int id,Pet pet);
         public Pet UpdatePetPrice(int id, double price);
         public Pet FindPetById(int id);
+        public IEnumerable<Pet> FindPetsByName(string name);
+        public IEnumerable<Pet> FindPetsByColor(string color);
     }
 }

@@ -22,6 +22,16 @@ namespace Petshop.Core.DomainService.Implementation
            return FakeDB.FindPetById(id);
         }
 
+        public IEnumerable<Pet> FindPetsByColor(string color)
+        {
+            return FakeDB.GetPetsFilteredByColor(color);
+        }
+
+        public IEnumerable<Pet> FindPetsByName(string name)
+        {
+            return FakeDB.GetPetsFilteredByName(name);
+        }
+
         public IEnumerable<Pet> ReadPets()
         {
             return FakeDB.GetPetsData();
