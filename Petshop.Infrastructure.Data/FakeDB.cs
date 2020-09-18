@@ -134,9 +134,10 @@ namespace Petshop.Infrastructure.Data
             p.ID = Id++;
             PetsData.Add(p);
         }
-        public static void RemovePet(int id)
+        public static Pet RemovePet(int id,Pet pet)
         {
-            PetsData.RemoveAll(x => x.ID == id);
+            PetsData.Remove(pet);
+            return pet;
         }
         public static Pet UpdatePetPrice(int id,double price)
         {

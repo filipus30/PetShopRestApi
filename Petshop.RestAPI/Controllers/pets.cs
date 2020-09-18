@@ -107,14 +107,27 @@ namespace Petshop.RestAPI.Controllers
         }
 
 
-
-
-
-
-
-
+        [HttpDelete("{id}")]
+        public ActionResult<Pet> Delete(int id)
+        {
+            try
+            {
+               Pet p = _petservice.DeletePet(id);
+                return Accepted(" pet has been deleted",p);
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
 
         }
+
+
+
+
+
+
+    }
 }
     
 

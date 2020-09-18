@@ -31,9 +31,17 @@ namespace Petshop.Core.ApplicationService.Implementation
             return p;
         }
 
-        public void DeletePet(int id)
+        public Pet DeletePet(int id)
         {
-            _petRepository.RemovePet(id);
+           Pet p = _petRepository.FindPetById(id);
+            if (p == null)
+            {
+                throw new Exception("Pet not found");
+            }
+            else
+            {
+                return _petRepository.RemovePet(id, p);
+            }
         }
 
         public Pet GetPetById(int id)
@@ -41,7 +49,7 @@ namespace Petshop.Core.ApplicationService.Implementation
             Pet p = _petRepository.FindPetById(id);
            if(p == null)
             {
-                throw new Exception("Wrong Id");
+                throw new InvalidDataException("Wrong Id");
             }
            else
             {

@@ -8,7 +8,7 @@ namespace Petshop.Core.ApplicationService
     {
         public List<Pet> GetPets();
         public Pet CreatePet(string Name,string Type,DateTime BirthDate,DateTime SoldDate,string Color,string PreviousOwner,double Price);
-        public void DeletePet(int id);
+        public Pet DeletePet(int id);
         public IEnumerable<Pet> GetPetsByType(string type);
         public List<Pet> GetPetsByPrice();
         public Pet UpdatePetPrice(int id, double price);
