@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="DomainService\" />
+    <Folder Include="ApplicationService\" />
+    <Folder Include="ApplicationService\Implementation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Petshop.Core.Entity\Petshop.Core.Entity.csproj" />
+  </ItemGroup>
+</Project>
