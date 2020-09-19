@@ -12,6 +12,7 @@ namespace Petshop.Infrastructure.Data
         public static IEnumerable<Owner> allTheOwners { get; set; }
         public static List<Pet> filtered = new List<Pet>();
         public static List<Pet> PetsData = new List<Pet>();
+        public static List<PetType> allPetTypes = new List<PetType>();
         public static int theOwnerCount { get; set; }
         private static int Id = 1;
 
@@ -19,9 +20,20 @@ namespace Petshop.Infrastructure.Data
 
         public static void InitData()
         {
+            allPetTypes = new List<PetType>
+            {
+                new PetType {PetTypeName = "Cat",PetTypeId = Id++},
+                new PetType {PetTypeName = "Dog",PetTypeId = Id++},
+                new PetType {PetTypeName = "Horse",PetTypeId = Id++},
+                new PetType {PetTypeName = "Fish",PetTypeId = Id++},
+                new PetType {PetTypeName = "Gerbil",PetTypeId = Id++},
+                new PetType {PetTypeName = "Hamster",PetTypeId = Id++},
+                new PetType {PetTypeName = "Rabbit",PetTypeId = Id++}
+            };
+
             PetsData.Add(new Pet
             {
-                Type = "Dog",
+                Type = allPetTypes[1],
                 Name = "Bob",
                 Birthdate = DateTime.Now.AddYears(-5),
                 SoldDate = DateTime.Now,
@@ -33,7 +45,7 @@ namespace Petshop.Infrastructure.Data
             }); ;
             PetsData.Add(new Pet
             {
-                Type = "Cat",
+                Type = allPetTypes[1],
                 Name = "Flamingo",
                 Birthdate = DateTime.Now.AddYears(-3),
                 SoldDate = DateTime.Now.AddYears(-1),
@@ -45,7 +57,7 @@ namespace Petshop.Infrastructure.Data
             }); ;
             PetsData.Add(new Pet
             {
-                Type = "Cat",
+                Type = allPetTypes[5],
                 Name = "John",
                 Birthdate = DateTime.Now.AddYears(-8),
                 SoldDate = DateTime.Now.AddYears(-3),
@@ -54,10 +66,10 @@ namespace Petshop.Infrastructure.Data
                 Price = 10,
                 ID = Id++
 
-            }); ;
+            }) ; ;
             PetsData.Add(new Pet
             {
-                Type = "Sheep",
+                Type = allPetTypes[1],
                 Name = "Lucy",
                 Birthdate = DateTime.Now.AddYears(-4),
                 SoldDate = DateTime.Now.AddYears(-2),
@@ -69,7 +81,7 @@ namespace Petshop.Infrastructure.Data
             }); ;
             PetsData.Add(new Pet
             {
-                Type = "Dog",
+                Type = allPetTypes[1],
                 Name = "Hector",
                 Birthdate = DateTime.Now.AddYears(-2),
                 SoldDate = DateTime.Now.AddYears(-1),
@@ -81,7 +93,7 @@ namespace Petshop.Infrastructure.Data
             }); ;
             PetsData.Add(new Pet
             {
-                Type = "Snake",
+                Type = allPetTypes[3],
                 Name = "Thomas",
                 Birthdate = DateTime.Now.AddYears(-3),
                 SoldDate = DateTime.Now.AddYears(-2),
@@ -93,7 +105,7 @@ namespace Petshop.Infrastructure.Data
             }); ;
             PetsData.Add(new Pet
             {
-                Type = "Goat",
+                Type = allPetTypes[2],
                 Name = "Nick",
                 Birthdate = DateTime.Now.AddYears(-3),
                 SoldDate = DateTime.Now.AddYears(-2),
@@ -121,7 +133,13 @@ namespace Petshop.Infrastructure.Data
             {
                addNewOwner(owner);
             }
+           
 
+        }
+
+        public static List<PetType>GetPetsTypeData()
+        {
+            return allPetTypes;
         }
 
         

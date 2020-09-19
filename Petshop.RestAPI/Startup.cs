@@ -37,6 +37,8 @@ namespace Petshop.RestAPI
             services.AddScoped<IPetService, PetService>();
             services.AddScoped<IOwnerRepository, OwnerRepository>();
             services.AddScoped<IOwnerService, OwnerService>();
+            services.AddScoped<IPetTypeRepository, PetTypeRepository>();
+            services.AddScoped<IPetTypeService, PetTypeService>();
             services.AddControllers();
         }
 

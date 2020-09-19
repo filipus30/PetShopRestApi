@@ -15,7 +15,7 @@ namespace Petshop.Core.ApplicationService.Implementation
         }
 
 
-        public Pet CreatePet(string Name, string Type, DateTime BirthDate, DateTime SoldDate, string Color, string PreviousOwner, double Price)
+        public Pet CreatePet(string Name, PetType Type, DateTime BirthDate, DateTime SoldDate, string Color, string PreviousOwner, double Price)
         {
             Pet p = new Pet
             {
@@ -76,12 +76,12 @@ namespace Petshop.Core.ApplicationService.Implementation
             return SortedList;
         }
 
-        public IEnumerable<Pet> GetPetsByType(string type)
-        {
-            List<Pet> filtered = new List<Pet>();
-            filtered = GetPets().FindAll(x => x.Type.ToLower().Equals(type.ToLower()));
-            return filtered;
-        }
+        //public IEnumerable<Pet> GetPetsByType(string type)
+        //{
+        //    List<Pet> filtered = new List<Pet>();
+        //    filtered = GetPets().FindAll(x => x.Type.ToLower().Equals(type.ToLower()));
+        //    return filtered;
+        //}
 
         public Pet UpdatePetPrice(int id, double price)
         {
