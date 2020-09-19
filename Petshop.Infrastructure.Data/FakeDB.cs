@@ -8,20 +8,34 @@ namespace Petshop.Infrastructure.Data
 {
     public static class FakeDB
     {
-        public static IEnumerable<Pet> allThePets { get; set; }
-        public static IEnumerable<Owner> allTheOwners { get; set; }
+       
         public static List<Pet> filtered = new List<Pet>();
         public static List<PetType> filteredTypes = new List<PetType>();
         public static List<Pet> PetsData = new List<Pet>();
         public static List<PetType> allPetTypes = new List<PetType>();
         public static int theOwnerCount { get; set; }
+        public static List<Owner> allTheOwners = new List<Owner>();
         private static int Id = 1;
         private static int TypeId = 1;
+        private static int OwnerId = 1;
 
 
 
         public static void InitData()
         {
+            allTheOwners = new List<Owner>
+            {
+                new Owner{OwnerFirstName = "Lars", OwnerLastName = "Rasmussen", OwnerAddress = "SweetStreet 4, 6700 Esbjerg", OwnerPhoneNr = "+45 1234 5678",OwnerId = OwnerId++},
+                new Owner{OwnerFirstName = "John", OwnerLastName = "Jackson", OwnerAddress = "The Alley 6, 6705 Esbjerg Ø", OwnerPhoneNr = "+45 2549 6254",OwnerId = OwnerId++},
+                new Owner{OwnerFirstName = "Maria", OwnerLastName = "Saunderson", OwnerAddress = "Kongensgade 33, 6700 Esbjerg", OwnerPhoneNr = "+45 8761 1624",OwnerId = OwnerId++},
+                new Owner{OwnerFirstName = "Belinda", OwnerLastName = "Twain", OwnerAddress = "Nørregade 14, 6700 Esbjerg", OwnerPhoneNr = "+45 7365 5976",OwnerId = OwnerId++},
+                new Owner{OwnerFirstName = "Roald", OwnerLastName = "Schwartz", OwnerAddress = "Lark Road 26, 6715 Esbjerg N", OwnerPhoneNr = "+45 7618 5234",OwnerId = OwnerId++},
+                new Owner{OwnerFirstName = "Shiela", OwnerLastName = "Jesperson", OwnerAddress = "Daniels Road 45, 6700 Esbjerg", OwnerPhoneNr = "+45 7831 2561",OwnerId = OwnerId++},
+                new Owner{OwnerFirstName = "Hansi", OwnerLastName = "Thompson", OwnerAddress = "Spooky Road 666, 6705 Esbjerg Ø", OwnerPhoneNr = "+45 1465 2845",OwnerId = OwnerId++},
+                new Owner{OwnerFirstName = "Victoria", OwnerLastName = "Marks", OwnerAddress = "Birkelunden 8, 6705 Esbjerg Ø", OwnerPhoneNr = "+45 5956 4651",OwnerId = OwnerId++},
+                new Owner{OwnerFirstName = "Niels", OwnerLastName = "Billson", OwnerAddress = "Folevej 3, 6715 Esbjerg N", OwnerPhoneNr = "+45 7286 9435",OwnerId = OwnerId++},
+                new Owner{OwnerFirstName = "Emanuelle", OwnerLastName = "Johnson", OwnerAddress = "Foldgårdsvej 17, 6715 Esbjerg N", OwnerPhoneNr = "+45 7315 4255",OwnerId = OwnerId++}
+            };
             allPetTypes = new List<PetType>
             {
                 new PetType {PetTypeName = "Cat",PetTypeId = TypeId++},
@@ -40,7 +54,7 @@ namespace Petshop.Infrastructure.Data
                 Birthdate = DateTime.Now.AddYears(-5),
                 SoldDate = DateTime.Now,
                 Color = "Brown",
-                PreviousOwner = "None",
+                PetOwner = allTheOwners[6],
                 Price = 100,
                 ID = Id++
 
@@ -52,7 +66,7 @@ namespace Petshop.Infrastructure.Data
                 Birthdate = DateTime.Now.AddYears(-3),
                 SoldDate = DateTime.Now.AddYears(-1),
                 Color = "White",
-                PreviousOwner = "Karen",
+                PetOwner = allTheOwners[6],
                 Price = 1000,
                 ID = Id++
 
@@ -64,7 +78,7 @@ namespace Petshop.Infrastructure.Data
                 Birthdate = DateTime.Now.AddYears(-8),
                 SoldDate = DateTime.Now.AddYears(-3),
                 Color = "White",
-                PreviousOwner = "Barack Gagama",
+                PetOwner = allTheOwners[5],
                 Price = 10,
                 ID = Id++
 
@@ -76,7 +90,7 @@ namespace Petshop.Infrastructure.Data
                 Birthdate = DateTime.Now.AddYears(-4),
                 SoldDate = DateTime.Now.AddYears(-2),
                 Color = "White",
-                PreviousOwner = "Alice Boop",
+                PetOwner = allTheOwners[4],
                 Price = 400,
                 ID = Id++
 
@@ -88,7 +102,7 @@ namespace Petshop.Infrastructure.Data
                 Birthdate = DateTime.Now.AddYears(-2),
                 SoldDate = DateTime.Now.AddYears(-1),
                 Color = "Brown",
-                PreviousOwner = "Anastasia Potter",
+                PetOwner = allTheOwners[3],
                 Price = 2000,
                 ID = Id++
 
@@ -100,7 +114,7 @@ namespace Petshop.Infrastructure.Data
                 Birthdate = DateTime.Now.AddYears(-3),
                 SoldDate = DateTime.Now.AddYears(-2),
                 Color = "Green",
-                PreviousOwner = "Lucy Brown",
+                PetOwner = allTheOwners[2],
                 Price = 500,
                 ID = Id++
 
@@ -112,29 +126,14 @@ namespace Petshop.Infrastructure.Data
                 Birthdate = DateTime.Now.AddYears(-3),
                 SoldDate = DateTime.Now.AddYears(-2),
                 Color = "Black & White",
-                PreviousOwner = "George Clinton",
+                PetOwner = allTheOwners[1],
                 Price = 200,
                 ID = Id++
 
             }); ;
 
-            List<Owner> allOwners = new List<Owner>
-            {
-                new Owner{OwnerFirstName = "Lars", OwnerLastName = "Rasmussen", OwnerAddress = "SweetStreet 4, 6700 Esbjerg", OwnerPhoneNr = "+45 1234 5678"},
-                new Owner{OwnerFirstName = "John", OwnerLastName = "Jackson", OwnerAddress = "The Alley 6, 6705 Esbjerg Ø", OwnerPhoneNr = "+45 2549 6254"},
-                new Owner{OwnerFirstName = "Maria", OwnerLastName = "Saunderson", OwnerAddress = "Kongensgade 33, 6700 Esbjerg", OwnerPhoneNr = "+45 8761 1624"},
-                new Owner{OwnerFirstName = "Belinda", OwnerLastName = "Twain", OwnerAddress = "Nørregade 14, 6700 Esbjerg", OwnerPhoneNr = "+45 7365 5976"},
-                new Owner{OwnerFirstName = "Roald", OwnerLastName = "Schwartz", OwnerAddress = "Lark Road 26, 6715 Esbjerg N", OwnerPhoneNr = "+45 7618 5234"},
-                new Owner{OwnerFirstName = "Shiela", OwnerLastName = "Jesperson", OwnerAddress = "Daniels Road 45, 6700 Esbjerg", OwnerPhoneNr = "+45 7831 2561"},
-                new Owner{OwnerFirstName = "Hansi", OwnerLastName = "Thompson", OwnerAddress = "Spooky Road 666, 6705 Esbjerg Ø", OwnerPhoneNr = "+45 1465 2845"},
-                new Owner{OwnerFirstName = "Victoria", OwnerLastName = "Marks", OwnerAddress = "Birkelunden 8, 6705 Esbjerg Ø", OwnerPhoneNr = "+45 5956 4651"},
-                new Owner{OwnerFirstName = "Niels", OwnerLastName = "Billson", OwnerAddress = "Folevej 3, 6715 Esbjerg N", OwnerPhoneNr = "+45 7286 9435"},
-                new Owner{OwnerFirstName = "Emanuelle", OwnerLastName = "Johnson", OwnerAddress = "Foldgårdsvej 17, 6715 Esbjerg N", OwnerPhoneNr = "+45 7315 4255"}
-            };
-            foreach (var owner in allOwners)
-            {
-               addNewOwner(owner);
-            }
+            
+           
            
 
         }
@@ -148,6 +147,10 @@ namespace Petshop.Infrastructure.Data
         public static IEnumerable<Pet> GetPetsData()
         {
             return PetsData;
+        }
+        public static List<Owner> GetOwnerData()
+        {
+            return allTheOwners;
         }
         public static void AddPet(Pet p)
         {
@@ -214,96 +217,11 @@ namespace Petshop.Infrastructure.Data
         }
 
 
-        internal static Owner updateOwnerLastName(Owner updatedOwner, string updateValue)
-        {
-            List<Owner> foundOwners = (allTheOwners.Where(owner => owner == updatedOwner)).ToList();
-            if (foundOwners.Count <= 0 || foundOwners.Count > 1)
-            {
-                throw new InvalidDataException(message: "I am sorry wrong amonut of owners found");
-            }
-            else
-            {
-                foundOwners[0].OwnerLastName = updateValue;
-                return foundOwners[0];
-            }
-        }
+        
 
-        internal static Owner updateOwnerAddress(Owner updatedOwner, string updateValue)
-        {
-            List<Owner> foundOwners = (allTheOwners.Where(owner => owner == updatedOwner)).ToList();
-            if (foundOwners.Count <= 0 || foundOwners.Count > 1)
-            {
-                throw new InvalidDataException(message: "I am sorry wrong amonut of owners found");
-            }
-            else
-            {
-                foundOwners[0].OwnerAddress = updateValue;
-                return foundOwners[0];
-            }
-        }
+        
 
-        internal static Owner DeleteOwnerById(int theId)
-        {
-            List<Owner> deletedOwner = (allTheOwners.Where(owner => owner.OwnerId == theId)).ToList();
-
-            if (deletedOwner.Count == 1)
-            {
-                allTheOwners = allTheOwners.Where(owner => owner != deletedOwner[0]);
-                return deletedOwner[0];
-            }
-            else
-            {
-                throw new InvalidDataException(message: "Wrong number of the id have been found.");
-            }
-        }
-
-        internal static Owner updateOwnerPhoneNr(Owner updatedOwner, string updateValue)
-        {
-            List<Owner> foundOwners = (allTheOwners.Where(owner => owner == updatedOwner)).ToList();
-            if (foundOwners.Count <= 0 || foundOwners.Count > 1)
-            {
-                throw new InvalidDataException(message: "I am sorry wrong amonut of owners found");
-            }
-            else
-            {
-                foundOwners[0].OwnerPhoneNr = updateValue;
-                return foundOwners[0];
-            }
-        }
-
-      
-
-        internal static Owner updateOwnerFirstName(Owner updatedOwner, string updateValue)
-        {
-            List<Owner> foundOwners = (allTheOwners.Where(owner => owner == updatedOwner)).ToList();
-            if (foundOwners.Count <= 0 || foundOwners.Count > 1)
-            {
-                throw new InvalidDataException(message: "I am sorry wrong amonut of owners found");
-            }
-            else
-            {
-                foundOwners[0].OwnerFirstName = updateValue;
-                return foundOwners[0];
-            }
-        }
-
-        internal static Owner addNewOwner(Owner theNewOwner)
-        {
-            theNewOwner.OwnerId = theOwnerCount;
-            theOwnerCount++;
-            List<Owner> newOwner = new List<Owner> { theNewOwner };
-            if (allTheOwners == null)
-            {
-                allTheOwners = newOwner;
-            }
-            else
-            {
-                allTheOwners = allTheOwners.Concat(newOwner);
-            }
-
-            return theNewOwner;
-        }
-
+        
 
     }
 }

@@ -15,7 +15,7 @@ namespace Petshop.Core.ApplicationService.Implementation
         }
 
 
-        public Pet CreatePet(string Name, PetType Type, DateTime BirthDate, DateTime SoldDate, string Color, string PreviousOwner, double Price)
+        public Pet CreatePet(string Name, PetType Type, DateTime BirthDate, DateTime SoldDate, string Color, Owner Owner, double Price)
         {
             Pet p = new Pet
             {
@@ -24,7 +24,7 @@ namespace Petshop.Core.ApplicationService.Implementation
                 Birthdate = BirthDate,
                 SoldDate = SoldDate,
                 Color = Color,
-                PreviousOwner = PreviousOwner,
+                PetOwner = Owner,
                 Price = Price
             };
             _petRepository.AddPet(p);

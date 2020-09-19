@@ -10,90 +10,24 @@ namespace Petshop.Core.ApplicationService.Implementation
     
         public class OwnerService : IOwnerService
         {
-            private IOwnerRepository _ownerRepo;
+            private IOwnerRepository _ownerRepository;
             public OwnerService(IOwnerRepository ownerRepository)
             {
-                _ownerRepo = ownerRepository;
-            }
-            public Owner AddNewOwner(string firstname, string lastname, string address, string phonenr, string email)
-            {
-                Owner theNewOwner = new Owner();
-                theNewOwner.OwnerFirstName = firstname;
-                theNewOwner.OwnerLastName = lastname;
-                theNewOwner.OwnerAddress = address;
-                theNewOwner.OwnerPhoneNr = phonenr;
-              
-
-                return _ownerRepo.AddNewOwner(theNewOwner);
-            }
-            public Owner DeleteOwnerByID(int theId)
-            {
-                return _ownerRepo.DeleteOwnerById(theId);
-            }
-            public List<Pet> FindAllPetsByOwner(Owner theOwner)
-            {
-                return _ownerRepo.FindAllPetsByOwner(theOwner).ToList();
+                _ownerRepository = ownerRepository;
             }
 
-            public Owner FindOwnerByID(int theId)
-            {
-                return _ownerRepo.FindOwnerByID(theId);
-            }
+        public IEnumerable<Owner> GetOwners()
+        {
+           var v = _ownerRepository.ReadOwners();
+             if (v == null)
 
-            public List<Owner> FindOwnersByName(string theName)
-            {
-                return _ownerRepo.FindOwnerByName(theName).ToList();
-            }
-            public List<Owner> GetAllOwners()
-            {
-                return _ownerRepo.GetAllOwners().ToList();
-            }
-
-            public List<Owner> SearchForOwner(int toSearchInt, string searchValue)
-            {
-                switch (toSearchInt)
+                    throw new Exception("No Owners Found");
+                else
                 {
-                    case 1:
-                        return _ownerRepo.FindOwnerByName(searchValue).ToList();
-                    case 2:
-                        return _ownerRepo.FindOwnerByAddress(searchValue).ToList();
-                    case 3:
-                        return _ownerRepo.FindOwnerByPhonenr(searchValue).ToList();
-
-                   
-
-                    case 4:
-                        int searchId;
-                        if (int.TryParse(searchValue, out searchId))
-                        {
-                            return new List<Owner> { _ownerRepo.FindOwnerByID(searchId) };
-                        }
-                        else
-                        {
-                            throw new InvalidDataException(message: "You have not given me a Nr to search the Id's for.");
-                        }
-                    default:
-                        throw new InvalidDataException(message: "Something unexpected went wrong.");
+                    return v.ToList();
                 }
-            }
-            public Owner UpdateOwner(Owner updatedOwner, int toUpdateInt, string updateValue)
-            {
-                switch (toUpdateInt)
-                {
-                    case 1:
-                        return _ownerRepo.UpdateFirstNameOfOwner(updatedOwner, updateValue);
-                    case 2:
-                        return _ownerRepo.UpdateLastNameOfOwner(updatedOwner, updateValue);
-                    case 3:
-                        return _ownerRepo.UpdateAddressOfOwner(updatedOwner, updateValue);
-                    case 4:
-                        return _ownerRepo.UpdatePhoneNrOfOwner(updatedOwner, updateValue);
-                   
-                    default:
-                        throw new InvalidDataException(message: "Something unexpected went wrong.");
-                }
-            }
         }
+    }
     
 }
 
