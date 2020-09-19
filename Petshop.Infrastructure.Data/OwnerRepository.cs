@@ -33,11 +33,7 @@ namespace Petshop.Infrastructure.Data
                 return ownerByAddress;
             }
 
-            public IEnumerable<Owner> FindOwnerByEmail(string searchValue)
-            {
-                IEnumerable<Owner> ownerByEmail = FakeDB.allTheOwners.Where(owner => owner.OwnerEmail.Contains(searchValue));
-                return ownerByEmail;
-            }
+           
 
             public Owner FindOwnerByID(int searchId)
             {
@@ -77,10 +73,7 @@ namespace Petshop.Infrastructure.Data
                 return FakeDB.updateOwnerPhoneNr(updatedOwner, updateValue);
             }
 
-            public Owner UpdateEmailOfOwner(Owner updatedOwner, string updateValue)
-            {
-                return FakeDB.updateOwnerEmail(updatedOwner, updateValue);
-            }
+           
 
             public Owner DeleteOwnerById(int theId)
             {

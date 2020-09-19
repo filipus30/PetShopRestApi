@@ -22,7 +22,7 @@ namespace Petshop.Core.ApplicationService.Implementation
                 theNewOwner.OwnerLastName = lastname;
                 theNewOwner.OwnerAddress = address;
                 theNewOwner.OwnerPhoneNr = phonenr;
-                theNewOwner.OwnerEmail = email;
+              
 
                 return _ownerRepo.AddNewOwner(theNewOwner);
             }
@@ -60,10 +60,9 @@ namespace Petshop.Core.ApplicationService.Implementation
                     case 3:
                         return _ownerRepo.FindOwnerByPhonenr(searchValue).ToList();
 
-                    case 4:
-                        return _ownerRepo.FindOwnerByEmail(searchValue).ToList();
+                   
 
-                    case 5:
+                    case 4:
                         int searchId;
                         if (int.TryParse(searchValue, out searchId))
                         {
@@ -89,8 +88,7 @@ namespace Petshop.Core.ApplicationService.Implementation
                         return _ownerRepo.UpdateAddressOfOwner(updatedOwner, updateValue);
                     case 4:
                         return _ownerRepo.UpdatePhoneNrOfOwner(updatedOwner, updateValue);
-                    case 5:
-                        return _ownerRepo.UpdateEmailOfOwner(updatedOwner, updateValue);
+                   
                     default:
                         throw new InvalidDataException(message: "Something unexpected went wrong.");
                 }

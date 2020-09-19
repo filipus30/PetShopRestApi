@@ -8,6 +8,6 @@ namespace Petshop.Core.Entity
         public string OwnerLastName { get; set; }
         public string OwnerAddress { get; set; }
         public string OwnerPhoneNr { get; set; }
-        public string OwnerEmail { get; set; }
+       
     }
 }
