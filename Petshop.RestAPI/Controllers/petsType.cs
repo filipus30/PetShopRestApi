@@ -12,6 +12,7 @@ namespace Petshop.RestAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Produces("application/json")]
     public class petsType : Controller
     {
         private readonly IPetService _petservice;

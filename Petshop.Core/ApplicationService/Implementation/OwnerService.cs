@@ -16,6 +16,19 @@ namespace Petshop.Core.ApplicationService.Implementation
                 _ownerRepository = ownerRepository;
             }
 
+        public Owner DeleteOwner(int id)
+        {
+            Owner o = _ownerRepository.FindOwnerById(id);
+            if (o == null)
+            {
+                throw new Exception("Pet not found");
+            }
+            else
+            {
+                return _ownerRepository.RemoveOwner(id, o);
+            }
+        }
+
         public Owner GetOwnerById(int id)
         {
             Owner o = _ownerRepository.FindOwnerById(id);

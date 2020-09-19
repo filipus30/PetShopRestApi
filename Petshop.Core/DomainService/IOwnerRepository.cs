@@ -11,5 +11,6 @@ namespace Petshop.Core.DomainService
         public Owner FindOwnerById(int id);
         public Owner AddOwner(Owner o);
         public Owner UpdateOwnerAddress(int id,string address);
+        public Owner RemoveOwner(int id, Owner o);
     }
 }

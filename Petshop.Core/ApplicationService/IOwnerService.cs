@@ -12,6 +12,7 @@ namespace Petshop.Core.ApplicationService
         public Owner GetOwnerById(int id);
         public Owner NewOwner(Owner o);
         public Owner UpdateOwnerAddress(int id, string address);
+        public Owner DeleteOwner(int id);
 
 
         }

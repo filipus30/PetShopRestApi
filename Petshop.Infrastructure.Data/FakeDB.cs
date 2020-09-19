@@ -180,6 +180,11 @@ namespace Petshop.Infrastructure.Data
             allPetTypes.Remove(pet);
             return pet;
         }
+        public static Owner RemoveOwner(int id,Owner o)
+        {
+            allTheOwners.Remove(o);
+            return o;
+        }
         public static Pet UpdatePetPrice(int id,double price)
         {
             var obj = PetsData.FirstOrDefault(x => x.ID == id);

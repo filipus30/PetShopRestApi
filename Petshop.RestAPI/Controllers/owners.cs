@@ -12,6 +12,7 @@ namespace Petshop.RestAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Produces("application/json")]
     public class owners : Controller
 
     {
@@ -103,7 +104,7 @@ namespace Petshop.RestAPI.Controllers
             try
             {
                 Owner o = _ownerservice.UpdateOwnerAddress(id, updatedOwner.OwnerAddress);
-                return Accepted("PetType updated", o);
+                return Accepted("Owner updated", o);
             }
             catch (Exception e)
             {
@@ -114,12 +115,12 @@ namespace Petshop.RestAPI.Controllers
 
 
         [HttpDelete("{id}")]
-        public ActionResult<PetType> Delete(int id)
+        public ActionResult<Owner> Delete(int id)
         {
             try
             {
-                PetType p = _pettypeservice.DeletePetType(id);
-                return Accepted("petType has been deleted", p);
+                Owner o = _ownerservice.DeleteOwner(id);
+                return Accepted("petType has been deleted", o);
             }
             catch (Exception e)
             {
