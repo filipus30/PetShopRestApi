@@ -26,5 +26,15 @@ namespace Petshop.Infrastructure.Data
         {
             return FakeDB.UpdatePetType(id, name);
         }
+
+        public PetType RemovePetType(int id, PetType pet)
+        {
+            return FakeDB.RemovePetType(id, pet);
+        }
+
+        public IEnumerable<PetType> FindPetTypesByName(string name)
+        {
+            return FakeDB.GetPetTypesFilteredByName(name);
+        }
     }
 }

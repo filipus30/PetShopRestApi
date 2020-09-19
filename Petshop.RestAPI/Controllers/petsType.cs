@@ -46,7 +46,7 @@ namespace Petshop.RestAPI.Controllers
 
                 try
                 {
-                    return Ok(_petservice.GetPetsFiltered(filter));
+                    return Ok(_pettypeservice.GetPetsTypesFiltered(filter));
                 }
                 catch (Exception)
                 {
@@ -114,12 +114,12 @@ namespace Petshop.RestAPI.Controllers
 
 
         [HttpDelete("{id}")]
-        public ActionResult<Pet> Delete(int id)
+        public ActionResult<PetType> Delete(int id)
         {
             try
             {
-                Pet p = _petservice.DeletePet(id);
-                return Accepted(" pet has been deleted", p);
+                PetType p = _pettypeservice.DeletePetType(id);
+                return Accepted("petType has been deleted", p);
             }
             catch (Exception e)
             {

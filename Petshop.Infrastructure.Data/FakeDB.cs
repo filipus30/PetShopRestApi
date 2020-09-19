@@ -11,6 +11,7 @@ namespace Petshop.Infrastructure.Data
         public static IEnumerable<Pet> allThePets { get; set; }
         public static IEnumerable<Owner> allTheOwners { get; set; }
         public static List<Pet> filtered = new List<Pet>();
+        public static List<PetType> filteredTypes = new List<PetType>();
         public static List<Pet> PetsData = new List<Pet>();
         public static List<PetType> allPetTypes = new List<PetType>();
         public static int theOwnerCount { get; set; }
@@ -164,6 +165,11 @@ namespace Petshop.Infrastructure.Data
             PetsData.Remove(pet);
             return pet;
         }
+        public static PetType RemovePetType(int id,PetType pet)
+        {
+            allPetTypes.Remove(pet);
+            return pet;
+        }
         public static Pet UpdatePetPrice(int id,double price)
         {
             var obj = PetsData.FirstOrDefault(x => x.ID == id);
@@ -200,6 +206,11 @@ namespace Petshop.Infrastructure.Data
         {
             filtered = PetsData.FindAll(x => x.Color.ToLower() == color.ToLower()).ToList();
             return filtered;
+        }
+        public static IEnumerable<PetType> GetPetTypesFilteredByName(string name)
+        {
+            filteredTypes = allPetTypes.FindAll(x => x.PetTypeName.ToLower() == name.ToLower()).ToList();
+            return filteredTypes;
         }
 
 
