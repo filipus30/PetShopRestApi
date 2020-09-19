@@ -60,11 +60,11 @@ namespace Petshop.RestAPI.Controllers
 
 
         [HttpGet("{Id}")]
-        public ActionResult<Pet> Get(int Id)
+        public ActionResult<PetType> Get(int Id)
         {
             try
             {
-                return _petservice.GetPetById(Id);
+                return _pettypeservice.GetPetTypeById(Id);
             }
             catch (Exception e)
             {
@@ -76,11 +76,11 @@ namespace Petshop.RestAPI.Controllers
 
 
         [HttpPost]
-        public ActionResult<Pet> Post([FromBody] Pet pet)
+        public ActionResult<PetType> Post([FromBody] PetType pet)
         {
             try
             {
-                return Created("Pet Created", _petservice.NewPet(pet));
+                return Created("PetType Created", _pettypeservice.CreatePetType(pet));
             }
             catch (Exception e)
             {
@@ -89,21 +89,21 @@ namespace Petshop.RestAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult<Pet> Put(int id, [FromBody] Pet updatedPet)
+        public ActionResult<Pet> Put(int id, [FromBody] PetType updatedPetType)
         {
-            if (updatedPet.ID != id)
+            if (updatedPetType.PetTypeId != id)
             {
                 return BadRequest("Id's mismatch");
             }
-            if (updatedPet.Price == 0)
+            if (updatedPetType.PetTypeName.Equals(null))
 
             {
-                return BadRequest("Put Price");
+                return BadRequest("Put Name");
             }
             try
             {
-                Pet p = _petservice.UpdatePetPrice(id, updatedPet.Price);
-                return Accepted("Pet updated", p);
+                PetType p = _pettypeservice.UpdatePetType(id, updatedPetType.PetTypeName);
+                return Accepted("PetType updated", p);
             }
             catch (Exception e)
             {

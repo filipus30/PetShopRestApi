@@ -15,6 +15,7 @@ namespace Petshop.Infrastructure.Data
         public static List<PetType> allPetTypes = new List<PetType>();
         public static int theOwnerCount { get; set; }
         private static int Id = 1;
+        private static int TypeId = 1;
 
 
 
@@ -22,13 +23,13 @@ namespace Petshop.Infrastructure.Data
         {
             allPetTypes = new List<PetType>
             {
-                new PetType {PetTypeName = "Cat",PetTypeId = Id++},
-                new PetType {PetTypeName = "Dog",PetTypeId = Id++},
-                new PetType {PetTypeName = "Horse",PetTypeId = Id++},
-                new PetType {PetTypeName = "Fish",PetTypeId = Id++},
-                new PetType {PetTypeName = "Gerbil",PetTypeId = Id++},
-                new PetType {PetTypeName = "Hamster",PetTypeId = Id++},
-                new PetType {PetTypeName = "Rabbit",PetTypeId = Id++}
+                new PetType {PetTypeName = "Cat",PetTypeId = TypeId++},
+                new PetType {PetTypeName = "Dog",PetTypeId = TypeId++},
+                new PetType {PetTypeName = "Horse",PetTypeId = TypeId++},
+                new PetType {PetTypeName = "Fish",PetTypeId = TypeId++},
+                new PetType {PetTypeName = "Gerbil",PetTypeId = TypeId++},
+                new PetType {PetTypeName = "Hamster",PetTypeId = TypeId++},
+                new PetType {PetTypeName = "Rabbit",PetTypeId = TypeId++}
             };
 
             PetsData.Add(new Pet
@@ -152,6 +153,12 @@ namespace Petshop.Infrastructure.Data
             p.ID = Id++;
             PetsData.Add(p);
         }
+        public static PetType AddPetType(PetType p)
+        {
+            p.PetTypeId = TypeId++;
+            allPetTypes.Add(p);
+            return p;
+        }
         public static Pet RemovePet(int id,Pet pet)
         {
             PetsData.Remove(pet);
@@ -163,10 +170,23 @@ namespace Petshop.Infrastructure.Data
             if (obj != null) obj.Price = price;
             return obj;
         }
+        public static PetType UpdatePetType(int id,string name)
+        {
+            var obj = allPetTypes.FirstOrDefault(x => x.PetTypeId == id);
+            if (obj != null) obj.PetTypeName = name;
+            return obj;
+
+        }
 
         public static Pet FindPetById(int id)
         {
             Pet pet = PetsData.Find(x => x.ID == id);
+            return pet;
+        }
+
+        public static PetType FindPetTypeById(int id)
+        {
+            PetType pet = allPetTypes.Find(x => x.PetTypeId == id);
             return pet;
         }
 

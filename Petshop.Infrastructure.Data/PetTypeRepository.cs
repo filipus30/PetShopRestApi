@@ -11,5 +11,20 @@ namespace Petshop.Infrastructure.Data
         {
            return FakeDB.GetPetsTypeData();
         }
+
+        public PetType FindPetTypeById(int id)
+        {
+            return FakeDB.FindPetTypeById(id);
+        }
+
+        public PetType AddPetType(PetType p)
+        {
+           return FakeDB.AddPetType(p);
+        }
+
+        public PetType UpdatePetType(int id, string name)
+        {
+            return FakeDB.UpdatePetType(id, name);
+        }
     }
 }
