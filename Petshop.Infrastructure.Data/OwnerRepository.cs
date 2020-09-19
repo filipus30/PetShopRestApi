@@ -28,6 +28,11 @@ namespace Petshop.Infrastructure.Data
         {
            return FakeDB.GetOwnerData();
         }
+
+        public Owner UpdateOwnerAddress(int id,string address)
+        {
+            return FakeDB.UpdateOwnerAddress(id,address);
+        }
     }
     
 }

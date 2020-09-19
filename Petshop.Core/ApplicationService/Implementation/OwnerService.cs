@@ -71,6 +71,21 @@ namespace Petshop.Core.ApplicationService.Implementation
                 return o;
             }
         }
+
+        public Owner UpdateOwnerAddress(int id,string address)
+        {
+            var p = _ownerRepository.FindOwnerById(id);
+            if (p == null)
+            {
+                throw new Exception(message: "Owner not found");
+            }
+            else
+            {
+                return _ownerRepository.UpdateOwnerAddress(id, address);
+            }
+        }
+
+
     }
     
 }

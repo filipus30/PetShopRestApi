@@ -193,7 +193,12 @@ namespace Petshop.Infrastructure.Data
             return obj;
 
         }
-
+        public static Owner UpdateOwnerAddress(int id,string address)
+        {
+            var obj = allTheOwners.FirstOrDefault(x => x.OwnerId == id);
+            if (obj != null) obj.OwnerAddress = address;
+            return obj;
+        }
         public static Pet FindPetById(int id)
         {
             Pet pet = PetsData.Find(x => x.ID == id);

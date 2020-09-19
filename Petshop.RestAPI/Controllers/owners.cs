@@ -89,21 +89,21 @@ namespace Petshop.RestAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult<Pet> Put(int id, [FromBody] PetType updatedPetType)
+        public ActionResult<Owner> Put(int id, [FromBody] Owner updatedOwner)
         {
-            if (updatedPetType.PetTypeId != id)
+            if (updatedOwner.OwnerId != id)
             {
                 return BadRequest("Id's mismatch");
             }
-            if (updatedPetType.PetTypeName.Equals(null))
+            if (updatedOwner.OwnerAddress.Equals(null))
 
             {
-                return BadRequest("Put Name");
+                return BadRequest("Put Address");
             }
             try
             {
-                PetType p = _pettypeservice.UpdatePetType(id, updatedPetType.PetTypeName);
-                return Accepted("PetType updated", p);
+                Owner o = _ownerservice.UpdateOwnerAddress(id, updatedOwner.OwnerAddress);
+                return Accepted("PetType updated", o);
             }
             catch (Exception e)
             {
