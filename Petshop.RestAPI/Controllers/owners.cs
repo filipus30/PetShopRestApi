@@ -46,7 +46,7 @@ namespace Petshop.RestAPI.Controllers
 
                 try
                 {
-                    return Ok(_pettypeservice.GetPetsTypesFiltered(filter));
+                    return Ok(_ownerservice.GetOwnersFiltered(filter));
                 }
                 catch (Exception)
                 {
@@ -60,11 +60,11 @@ namespace Petshop.RestAPI.Controllers
 
 
         [HttpGet("{Id}")]
-        public ActionResult<PetType> Get(int Id)
+        public ActionResult<Owner> Get(int Id)
         {
             try
             {
-                return _pettypeservice.GetPetTypeById(Id);
+                return _ownerservice.GetOwnerById(Id);
             }
             catch (Exception e)
             {
@@ -76,11 +76,11 @@ namespace Petshop.RestAPI.Controllers
 
 
         [HttpPost]
-        public ActionResult<PetType> Post([FromBody] PetType pet)
+        public ActionResult<Owner> Post([FromBody] Owner owner)
         {
             try
             {
-                return Created("PetType Created", _pettypeservice.CreatePetType(pet));
+                return Created("Owner Created", _ownerservice.NewOwner(owner));
             }
             catch (Exception e)
             {

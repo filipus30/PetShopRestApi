@@ -11,6 +11,7 @@ namespace Petshop.Infrastructure.Data
        
         public static List<Pet> filtered = new List<Pet>();
         public static List<PetType> filteredTypes = new List<PetType>();
+        public static List<Owner> filteredOwners = new List<Owner>();
         public static List<Pet> PetsData = new List<Pet>();
         public static List<PetType> allPetTypes = new List<PetType>();
         public static int theOwnerCount { get; set; }
@@ -163,6 +164,12 @@ namespace Petshop.Infrastructure.Data
             allPetTypes.Add(p);
             return p;
         }
+        public static Owner AddOwner(Owner o)
+        {
+            o.OwnerId = OwnerId++;
+            allTheOwners.Add(o);
+            return o;
+        }
         public static Pet RemovePet(int id,Pet pet)
         {
             PetsData.Remove(pet);
@@ -199,6 +206,11 @@ namespace Petshop.Infrastructure.Data
             return pet;
         }
 
+        public static Owner FindOwnerById(int id)
+        {
+            Owner owner = allTheOwners.Find(x => x.OwnerId == id);
+            return owner;
+        }
         public static IEnumerable<Pet> GetPetsFilteredByName(string name)
         {
             filtered = PetsData.FindAll(x => x.Name.ToLower() == name.ToLower()).ToList();
@@ -217,7 +229,11 @@ namespace Petshop.Infrastructure.Data
         }
 
 
-        
+        public static IEnumerable<Owner> GetOwnersFilteredByName(string name)
+        {
+            filteredOwners = allTheOwners.FindAll(x => x.OwnerFirstName.ToLower() == name.ToLower()).ToList();
+            return filteredOwners;
+        }
 
         
 
