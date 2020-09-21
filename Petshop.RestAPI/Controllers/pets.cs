@@ -12,7 +12,7 @@ using Petshop.Core.Entity;
 namespace Petshop.RestAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [Produces("application/json")]
     public class pets : ControllerBase
     {
@@ -33,6 +33,7 @@ namespace Petshop.RestAPI.Controllers
             {
                 try
                 {
+                   
                     return Ok(_petservice.GetPets());
                 }
                 catch (Exception)
@@ -95,14 +96,14 @@ namespace Petshop.RestAPI.Controllers
             {
                 return BadRequest("Id's mismatch");
             }
-            if (updatedPet.Price == 0)
+            if (updatedPet.Name.Equals(null))
 
             {
-                return BadRequest("Put Price");
+                return BadRequest("Put Name");
             }
             try
             {
-                Pet p = _petservice.UpdatePetPrice(id, updatedPet.Price);
+                Pet p = _petservice.UpdatePet(id, updatedPet);
                 return Accepted("Pet updated", p);
             }
             catch (Exception e)

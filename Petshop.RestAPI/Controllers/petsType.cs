@@ -11,7 +11,7 @@ using Petshop.Core.Entity;
 namespace Petshop.RestAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [Produces("application/json")]
     public class petsType : Controller
     {
@@ -90,7 +90,7 @@ namespace Petshop.RestAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult<Pet> Put(int id, [FromBody] PetType updatedPetType)
+        public ActionResult<PetType> Put(int id, [FromBody] PetType updatedPetType)
         {
             if (updatedPetType.PetTypeId != id)
             {

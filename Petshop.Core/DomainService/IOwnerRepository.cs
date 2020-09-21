@@ -10,7 +10,7 @@ namespace Petshop.Core.DomainService
         public IEnumerable<Owner> FindOwnersByName(string name);
         public Owner FindOwnerById(int id);
         public Owner AddOwner(Owner o);
-        public Owner UpdateOwnerAddress(int id,string address);
+        public Owner UpdateOwner(int id,Owner owner);
         public Owner RemoveOwner(int id, Owner o);
     }
 }

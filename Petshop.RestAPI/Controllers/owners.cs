@@ -11,7 +11,7 @@ using Petshop.Core.Entity;
 namespace Petshop.RestAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [Produces("application/json")]
     public class owners : Controller
 
@@ -99,11 +99,11 @@ namespace Petshop.RestAPI.Controllers
             if (updatedOwner.OwnerAddress.Equals(null))
 
             {
-                return BadRequest("Put Address");
+                return BadRequest("Put Name");
             }
             try
             {
-                Owner o = _ownerservice.UpdateOwnerAddress(id, updatedOwner.OwnerAddress);
+                Owner o = _ownerservice.UpdateOwner(id,updatedOwner);
                 return Accepted("Owner updated", o);
             }
             catch (Exception e)

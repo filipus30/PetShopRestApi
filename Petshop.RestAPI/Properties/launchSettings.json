@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "pets",
+      "launchUrl": "api/pets",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,7 +20,7 @@
     "Petshop.RestAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "pets",
+      "launchUrl": "api/pets",
       "applicationUrl": "https://localhost:59009;http://localhost:42784",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

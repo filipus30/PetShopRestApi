@@ -26,9 +26,9 @@ namespace Petshop.Infrastructure.Data
         {
             allTheOwners = new List<Owner>
             {
-                new Owner{OwnerFirstName = "Lars", OwnerLastName = "Rasmussen", OwnerAddress = "SweetStreet 4, 6700 Esbjerg", OwnerPhoneNr = "+45 1234 5678",OwnerId = OwnerId++},
-                new Owner{OwnerFirstName = "John", OwnerLastName = "Jackson", OwnerAddress = "The Alley 6, 6705 Esbjerg Ø", OwnerPhoneNr = "+45 2549 6254",OwnerId = OwnerId++},
-                new Owner{OwnerFirstName = "Maria", OwnerLastName = "Saunderson", OwnerAddress = "Kongensgade 33, 6700 Esbjerg", OwnerPhoneNr = "+45 8761 1624",OwnerId = OwnerId++},
+                new Owner{OwnerFirstName = "Bobby", OwnerLastName = "Tobby", OwnerAddress = "Street 4, 6700 Esbjerg", OwnerPhoneNr = "+45 1234 5678",OwnerId = OwnerId++},
+                new Owner{OwnerFirstName = "John", OwnerLastName = "Paul", OwnerAddress = "Alley 6, 6705 Esbjerg Ø", OwnerPhoneNr = "+45 2549 6254",OwnerId = OwnerId++},
+                new Owner{OwnerFirstName = "Anne", OwnerLastName = "Saunderson", OwnerAddress = "Kongensgade 33, 6700 Esbjerg", OwnerPhoneNr = "+45 8761 1624",OwnerId = OwnerId++},
                 new Owner{OwnerFirstName = "Belinda", OwnerLastName = "Twain", OwnerAddress = "Nørregade 14, 6700 Esbjerg", OwnerPhoneNr = "+45 7365 5976",OwnerId = OwnerId++},
                 new Owner{OwnerFirstName = "Roald", OwnerLastName = "Schwartz", OwnerAddress = "Lark Road 26, 6715 Esbjerg N", OwnerPhoneNr = "+45 7618 5234",OwnerId = OwnerId++},
                 new Owner{OwnerFirstName = "Shiela", OwnerLastName = "Jesperson", OwnerAddress = "Daniels Road 45, 6700 Esbjerg", OwnerPhoneNr = "+45 7831 2561",OwnerId = OwnerId++},
@@ -141,13 +141,30 @@ namespace Petshop.Infrastructure.Data
 
         public static List<PetType>GetPetsTypeData()
         {
+           
             return allPetTypes;
         }
 
         
         public static IEnumerable<Pet> GetPetsData()
         {
-            return PetsData;
+            List<Pet> list = new List<Pet>();
+            var d = PetsData;
+            foreach (Pet p in d)
+            {
+                list.Add(new Pet
+                {
+                    Birthdate = p.Birthdate,
+                    Color = p.Color,
+                    Name = p.Name,
+                    ID = p.ID,
+                    PetOwner = null,
+                    Price = p.Price,
+                    SoldDate = p.SoldDate,
+                    Type = p.Type
+                });
+            }
+            return list;
         }
         public static List<Owner> GetOwnerData()
         {
@@ -178,17 +195,36 @@ namespace Petshop.Infrastructure.Data
         public static PetType RemovePetType(int id,PetType pet)
         {
             allPetTypes.Remove(pet);
+            var v = PetsData.FindAll(x => x.Type == pet);
+            foreach (Pet p in v)
+            {
+                p.Type = null;
+            }
             return pet;
         }
         public static Owner RemoveOwner(int id,Owner o)
         {
             allTheOwners.Remove(o);
+           var v = PetsData.FindAll(x => x.PetOwner == o);
+            foreach(Pet p in v)
+            {
+                p.PetOwner = null;
+            }
             return o;
         }
-        public static Pet UpdatePetPrice(int id,double price)
+        public static Pet UpdatePet(int id,Pet pet)
         {
             var obj = PetsData.FirstOrDefault(x => x.ID == id);
-            if (obj != null) obj.Price = price;
+            if (obj != null)
+            {
+                obj.Price = pet.Price;
+                obj.Birthdate = pet.Birthdate;
+                obj.Color = pet.Color;
+                obj.Name = pet.Name;
+                obj.PetOwner = pet.PetOwner;
+                obj.SoldDate = pet.SoldDate;
+                obj.Type = pet.Type;
+            }
             return obj;
         }
         public static PetType UpdatePetType(int id,string name)
@@ -198,11 +234,18 @@ namespace Petshop.Infrastructure.Data
             return obj;
 
         }
-        public static Owner UpdateOwnerAddress(int id,string address)
+        public static Owner UpdateOwner(int id,Owner owner)
         {
             var obj = allTheOwners.FirstOrDefault(x => x.OwnerId == id);
-            if (obj != null) obj.OwnerAddress = address;
-            return obj;
+            if (obj != null)
+            {
+                obj.OwnerAddress = owner.OwnerAddress;
+                obj.OwnerFirstName = owner.OwnerFirstName;
+                obj.OwnerLastName = owner.OwnerLastName;
+                obj.OwnerPhoneNr = owner.OwnerPhoneNr;
+                obj.PetsOwned = owner.PetsOwned;
+            }
+            return owner;
         }
         public static Pet FindPetById(int id)
         {
@@ -213,14 +256,50 @@ namespace Petshop.Infrastructure.Data
         public static PetType FindPetTypeById(int id)
         {
             PetType pet = allPetTypes.Find(x => x.PetTypeId == id);
-            return pet;
+            PetType petcloned = new PetType
+            {
+                PetTypeId = pet.PetTypeId,
+                PetTypeName = pet.PetTypeName,
+            };
+
+            return petcloned;
         }
 
         public static Owner FindOwnerById(int id)
         {
             Owner owner = allTheOwners.Find(x => x.OwnerId == id);
-            return owner;
+
+            Owner ownercloned = new Owner
+            {
+                OwnerId = owner.OwnerId,
+                OwnerFirstName = owner.OwnerFirstName,
+                OwnerAddress = owner.OwnerAddress,
+                OwnerLastName = owner.OwnerLastName,
+                OwnerPhoneNr = owner.OwnerPhoneNr,
+
+            };
+            var d = PetsData.FindAll(x => x.PetOwner.OwnerId == ownercloned.OwnerId);
+            List<Pet> list = new List<Pet>();
+          
+            foreach (Pet p in d)
+            {
+                list.Add(new Pet
+                {
+                    Birthdate = p.Birthdate,
+                    Color = p.Color,
+                    Name = p.Name,
+                    ID = p.ID,
+                    PetOwner = null,
+                    Price = p.Price,
+                    SoldDate = p.SoldDate,
+                    Type = p.Type
+                });
+            }
+            ownercloned.PetsOwned = list;
+            return ownercloned;
         }
+
+
         public static IEnumerable<Pet> GetPetsFilteredByName(string name)
         {
             filtered = PetsData.FindAll(x => x.Name.ToLower() == name.ToLower()).ToList();

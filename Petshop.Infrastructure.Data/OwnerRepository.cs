@@ -34,9 +34,9 @@ namespace Petshop.Infrastructure.Data
             return FakeDB.RemoveOwner(id, o);
         }
 
-        public Owner UpdateOwnerAddress(int id,string address)
+        public Owner UpdateOwner(int id,Owner owner)
         {
-            return FakeDB.UpdateOwnerAddress(id,address);
+            return FakeDB.UpdateOwner(id,owner);
         }
     }
     

@@ -38,7 +38,7 @@ namespace Petshop.Core.ApplicationService.Implementation
             }
             else
             {
-                return o;
+                return _ownerRepository.FindOwnerById(id);
             }
         }
 
@@ -85,7 +85,7 @@ namespace Petshop.Core.ApplicationService.Implementation
             }
         }
 
-        public Owner UpdateOwnerAddress(int id,string address)
+        public Owner UpdateOwner(int id,Owner owner)
         {
             var p = _ownerRepository.FindOwnerById(id);
             if (p == null)
@@ -94,7 +94,7 @@ namespace Petshop.Core.ApplicationService.Implementation
             }
             else
             {
-                return _ownerRepository.UpdateOwnerAddress(id, address);
+                return _ownerRepository.UpdateOwner(id,owner);
             }
         }
 
