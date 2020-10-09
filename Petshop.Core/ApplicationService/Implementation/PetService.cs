@@ -27,7 +27,7 @@ namespace Petshop.Core.ApplicationService.Implementation
                 PetOwner = Owner,
                 Price = Price
             };
-            _petRepository.AddPet(p);
+            _petRepository.CreatePet(p);
             return p;
         }
 
@@ -124,7 +124,7 @@ namespace Petshop.Core.ApplicationService.Implementation
             }
             else
             {
-                _petRepository.AddPet(pet);
+                _petRepository.CreatePet(pet);
                 return pet;
             }
 

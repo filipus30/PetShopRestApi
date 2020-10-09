@@ -12,9 +12,9 @@ namespace Petshop.Core.DomainService.Implementation
            
         }
 
-        public void AddPet(Pet p)
+        public Pet CreatePet(Pet p)
         {
-            FakeDB.AddPet(p);
+          return  FakeDB.AddPet(p);
         }
 
         public Pet FindPetById(int id)

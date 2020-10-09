@@ -170,10 +170,11 @@ namespace Petshop.Infrastructure.Data
         {
             return allTheOwners;
         }
-        public static void AddPet(Pet p)
+        public static Pet AddPet(Pet p)
         {
             p.ID = Id++;
             PetsData.Add(p);
+            return p;
         }
         public static PetType AddPetType(PetType p)
         {
