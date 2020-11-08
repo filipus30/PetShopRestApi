@@ -1,0 +1,16 @@
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/bin/Debug/netcoreapp3.1/Petshop.Infrastructure.SQL.deps.json
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/bin/Debug/netcoreapp3.1/Petshop.Infrastructure.SQL.dll
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/bin/Debug/netcoreapp3.1/Petshop.Infrastructure.SQL.pdb
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/bin/Debug/netcoreapp3.1/Petshop.Core.dll
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/bin/Debug/netcoreapp3.1/Petshop.Core.Entity.dll
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/bin/Debug/netcoreapp3.1/Petshop.Infrastructure.Data.dll
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/bin/Debug/netcoreapp3.1/Petshop.Core.Entity.pdb
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/bin/Debug/netcoreapp3.1/Petshop.Core.pdb
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/bin/Debug/netcoreapp3.1/Petshop.Infrastructure.Data.pdb
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/obj/Debug/netcoreapp3.1/Petshop.Infrastructure.SQL.csprojAssemblyReference.cache
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/obj/Debug/netcoreapp3.1/Petshop.Infrastructure.SQL.AssemblyInfoInputs.cache
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/obj/Debug/netcoreapp3.1/Petshop.Infrastructure.SQL.AssemblyInfo.cs
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/obj/Debug/netcoreapp3.1/Petshop.Infrastructure.SQL.csproj.CoreCompileInputs.cache
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/obj/Debug/netcoreapp3.1/Petshop.Infrastructure.SQL.csproj.CopyComplete
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/obj/Debug/netcoreapp3.1/Petshop.Infrastructure.SQL.dll
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/obj/Debug/netcoreapp3.1/Petshop.Infrastructure.SQL.pdb

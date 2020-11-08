@@ -20,6 +20,9 @@ using Petshop.Core.Entity;
 using Petshop.Infrastructure.Data;
 using Petshop.Infrastructure.SQL;
 using Petshop.Infrastructure.SQL.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Petshop.RestAPI.Helper;
 
 namespace Petshop.RestAPI
 {
@@ -37,7 +40,26 @@ namespace Petshop.RestAPI
         {
 
             FakeDB.InitData();
-          
+            Byte[] secretBytes = new byte[40];
+            Random rand = new Random();
+            rand.NextBytes(secretBytes);
+
+            // Add JWT based authentication
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateAudience = false,
+                    //ValidAudience = "TodoApiClient",
+                    ValidateIssuer = false,
+                    //ValidIssuer = "TodoApi",
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(secretBytes),
+                    ValidateLifetime = true, //validate the expiration and not before values in the token
+                    ClockSkew = TimeSpan.FromMinutes(5) //5 minute tolerance for the expiration date
+                };
+            });
+
             services.AddDbContext<PetshopDBContext>(
                 opt =>
                 {
@@ -50,6 +72,10 @@ namespace Petshop.RestAPI
             services.AddScoped<IOwnerService, OwnerService>();
             services.AddScoped<IPetTypeRepository, PetTypeSQLRepository>();// remove sql if needed
             services.AddScoped<IPetTypeService, PetTypeService>();
+            services.AddScoped<IUserRepository, UserSQLRepository>();
+            services.AddSwaggerGen();
+            services.AddSingleton<IAuthenticationHelper>(new
+            AuthenticationHelper(secretBytes));
             services.AddCors(options =>
              options.AddDefaultPolicy(
                  builder =>
@@ -61,7 +87,7 @@ namespace Petshop.RestAPI
     .AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
 );
-            services.AddSwaggerGen();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -87,7 +113,9 @@ namespace Petshop.RestAPI
                     var petRepository = scope.ServiceProvider.GetService<IPetRepository>();
                     var petTypeRepository = scope.ServiceProvider.GetService<IPetTypeRepository>();
                     var ownerRepository = scope.ServiceProvider.GetService<IOwnerRepository>();
-                    new DBInitializer(petRepository, ownerRepository, petTypeRepository).InitData();
+                    var userRepository = scope.ServiceProvider.GetService<IUserRepository>();
+                    var helper = scope.ServiceProvider.GetService<IAuthenticationHelper>();
+                    new DBInitializer(petRepository, ownerRepository, petTypeRepository,userRepository,helper).InitData();
 
 
                         }
@@ -98,6 +126,7 @@ namespace Petshop.RestAPI
 
             app.UseRouting();
             app.UseCors();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

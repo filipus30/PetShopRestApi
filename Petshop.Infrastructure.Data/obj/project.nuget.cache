@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "D8ZQ2SjlXazx7Ct6+OgYQyAgGxR06PFGIrHDcWQPiWE01vfPzuVIyOe2+4exIMY9W1H3pymeJdTZfoVU9HCMRA==",
+  "success": true,
+  "projectFilePath": "/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/Petshop.Infrastructure.Data.csproj",
+  "expectedPackageFiles": [
+    "/Users/macos/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/macos/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/macos/.nuget/packages/swashbuckle.aspnetcore/5.6.1/swashbuckle.aspnetcore.5.6.1.nupkg.sha512",
+    "/Users/macos/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.1/swashbuckle.aspnetcore.swagger.5.6.1.nupkg.sha512",
+    "/Users/macos/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.1/swashbuckle.aspnetcore.swaggergen.5.6.1.nupkg.sha512",
+    "/Users/macos/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.1/swashbuckle.aspnetcore.swaggerui.5.6.1.nupkg.sha512"
+  ],
+  "logs": []
+}

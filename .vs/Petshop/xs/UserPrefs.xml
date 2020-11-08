@@ -1,0 +1,46 @@
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{F9759F43-F916-4E9D-B2BB-4CD924246132}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Petshop.Infrastructure.SQL/DBInitializer.cs">
+    <Files>
+      <File FileName="Petshop.Infrastructure.SQL/DBInitializer.cs" Line="60" Column="50" />
+      <File FileName="Petshop.Infrastructure.SQL/Repositories/UserSQLRepository.cs" />
+      <File FileName="Petshop.Infrastructure.SQL/Repositories/PetTypeSQLRepository.cs" />
+      <File FileName="Petshop.Infrastructure.SQL/Repositories/PetSQLRepository.cs" />
+      <File FileName="Petshop.Infrastructure.SQL/Repositories/OwnerSQLRepository.cs" />
+      <File FileName="Petshop.Infrastructure.SQL/Helper/AuthenticationHelper.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Petshop" expanded="True">
+            <Node name="Petshop.Core" expanded="True">
+              <Node name="ApplicationService" expanded="True">
+                <Node name="Implementation" expanded="True" />
+              </Node>
+              <Node name="DomainService" expanded="True" />
+            </Node>
+            <Node name="Petshop.Core.Entity" expanded="True" />
+            <Node name="Petshop.Infrastructure.SQL" expanded="True">
+              <Node name="Helper" expanded="True" />
+              <Node name="Repositories" expanded="True" />
+              <Node name="DBInitializer.cs" selected="True" />
+            </Node>
+            <Node name="Petshop.RestAPI" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Properties" expanded="True">
+                <Node name="PublishProfiles" expanded="True" />
+              </Node>
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Petshop.RestAPI PreferredExecutionTarget="/Applications/Safari.app" />
+</Properties>

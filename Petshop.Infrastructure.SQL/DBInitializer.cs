@@ -2,6 +2,7 @@
 using Petshop.Core;
 using Petshop.Core.DomainService;
 using Petshop.Core.Entity;
+using Petshop.RestAPI.Helper;
 
 namespace Petshop.Infrastructure.SQL
 {
@@ -10,8 +11,12 @@ namespace Petshop.Infrastructure.SQL
         private readonly IPetRepository _petRepository;
         private readonly IOwnerRepository _ownerRepository;
         private readonly IPetTypeRepository _petTypeRepository;
-        public DBInitializer(IPetRepository petRepository,IOwnerRepository ownerRepository,IPetTypeRepository petTypeRepository)
+        private readonly IUserRepository _userRepository;
+        private readonly IAuthenticationHelper _authenticationHelper;
+        public DBInitializer(IPetRepository petRepository,IOwnerRepository ownerRepository,IPetTypeRepository petTypeRepository,IUserRepository userRepository,IAuthenticationHelper authenticationHelper)
         {
+            _authenticationHelper = authenticationHelper;
+            _userRepository = userRepository;
             _petRepository = petRepository;
             _ownerRepository = ownerRepository;
             _petTypeRepository = petTypeRepository;
@@ -52,12 +57,34 @@ namespace Petshop.Infrastructure.SQL
                 Color = "White",
                 PetOwner = owner2,
                 Type = pt,
-                Name = "CattoButActuallyDoggoToo",
+                Name = "CattoButActuallyDoggoTooo",
                 Price = 1000
             });
             owner.PetsOwned.Add(pet);
             owner2.PetsOwned.Add(pet2);
-           
+            string password = "1234";
+            byte[] passwordHashJoe, passwordSaltJoe, passwordHashAnn, passwordSaltAnn;
+            _authenticationHelper.CreatePasswordHash(password, out passwordHashJoe, out passwordSaltJoe);
+            _authenticationHelper.CreatePasswordHash(password, out passwordHashAnn, out passwordSaltAnn);
+
+            List<User> users = new List<User>
+            {
+                new User {
+                    Username = "UserJoe",
+                    PasswordHash = passwordHashJoe,
+                    PasswordSalt = passwordSaltJoe,
+                    IsAdmin = false
+                },
+                new User {
+                    Username = "AdminAnn",
+                    PasswordHash = passwordHashAnn,
+                    PasswordSalt = passwordSaltAnn,
+                    IsAdmin = true
+                }
+            };
+            _userRepository.Add(users[0]);
+            _userRepository.Add(users[1]);
+   
         }
 
 

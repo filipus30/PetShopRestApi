@@ -10,6 +10,7 @@ namespace Petshop.Infrastructure.SQL
         public DbSet<Pet> Pet { get; set; }
         public DbSet<Owner> Owner { get; set; }
         public DbSet<PetType> PetType { get; set; }
+        public DbSet<User> Users { get; set; }
 
     }
 }

@@ -1,0 +1,14 @@
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/bin/Release/netcoreapp3.1/Petshop.Infrastructure.Data.deps.json
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/bin/Release/netcoreapp3.1/Petshop.Infrastructure.Data.dll
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/bin/Release/netcoreapp3.1/Petshop.Infrastructure.Data.pdb
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/bin/Release/netcoreapp3.1/Petshop.Core.dll
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/bin/Release/netcoreapp3.1/Petshop.Core.Entity.dll
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/bin/Release/netcoreapp3.1/Petshop.Core.Entity.pdb
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/bin/Release/netcoreapp3.1/Petshop.Core.pdb
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/obj/Release/netcoreapp3.1/Petshop.Infrastructure.Data.csprojAssemblyReference.cache
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/obj/Release/netcoreapp3.1/Petshop.Infrastructure.Data.AssemblyInfoInputs.cache
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/obj/Release/netcoreapp3.1/Petshop.Infrastructure.Data.AssemblyInfo.cs
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/obj/Release/netcoreapp3.1/Petshop.Infrastructure.Data.csproj.CoreCompileInputs.cache
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/obj/Release/netcoreapp3.1/Petshop.Infrastructure.Data.csproj.CopyComplete
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/obj/Release/netcoreapp3.1/Petshop.Infrastructure.Data.dll
+/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/obj/Release/netcoreapp3.1/Petshop.Infrastructure.Data.pdb
