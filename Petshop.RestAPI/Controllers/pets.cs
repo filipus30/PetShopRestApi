@@ -60,7 +60,6 @@ namespace Petshop.RestAPI.Controllers
 
 
 
-        [Authorize]
         [HttpGet("{Id}")]
         public ActionResult<Pet> Get(int Id)
         {
@@ -114,7 +113,7 @@ namespace Petshop.RestAPI.Controllers
 
         }
 
-
+        [Authorize]
         [HttpDelete("{id}")]
         public ActionResult<Pet> Delete(int id)
         {
