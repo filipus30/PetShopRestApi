@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Petshop.Core.ApplicationService;
 using Petshop.Core.Entity;
@@ -27,6 +28,7 @@ namespace Petshop.RestAPI.Controllers
             _pettypeservice = petTypeService;
         }
 
+        [Authorize]
         [HttpGet]
         public ActionResult<IEnumerable<Owner>> Get([FromQuery] FilterModel filter)
         {

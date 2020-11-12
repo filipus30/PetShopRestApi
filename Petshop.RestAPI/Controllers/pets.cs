@@ -26,7 +26,7 @@ namespace Petshop.RestAPI.Controllers
             _petservice = petService;
             _ownerservice = ownerService;
         }
-
+       //[Authorize]
         [HttpGet]
         public ActionResult<IEnumerable<Pet>> Get([FromQuery] FilterModel filter)
         {
@@ -113,7 +113,6 @@ namespace Petshop.RestAPI.Controllers
 
         }
 
-        [Authorize]
         [HttpDelete("{id}")]
         public ActionResult<Pet> Delete(int id)
         {
