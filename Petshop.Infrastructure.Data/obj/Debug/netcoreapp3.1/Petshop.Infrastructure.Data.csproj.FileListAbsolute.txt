@@ -12,3 +12,17 @@
 /Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/obj/Debug/netcoreapp3.1/Petshop.Infrastructure.Data.csproj.CopyComplete
 /Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/obj/Debug/netcoreapp3.1/Petshop.Infrastructure.Data.dll
 /Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/obj/Debug/netcoreapp3.1/Petshop.Infrastructure.Data.pdb
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.Data\bin\Debug\netcoreapp3.1\Petshop.Infrastructure.Data.deps.json
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.Data\bin\Debug\netcoreapp3.1\Petshop.Infrastructure.Data.dll
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.Data\bin\Debug\netcoreapp3.1\Petshop.Infrastructure.Data.pdb
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.Data\bin\Debug\netcoreapp3.1\Petshop.Core.dll
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.Data\bin\Debug\netcoreapp3.1\Petshop.Core.Entity.dll
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.Data\bin\Debug\netcoreapp3.1\Petshop.Core.Entity.pdb
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.Data\bin\Debug\netcoreapp3.1\Petshop.Core.pdb
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.Data\obj\Debug\netcoreapp3.1\Petshop.Infrastructure.Data.csprojAssemblyReference.cache
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.Data\obj\Debug\netcoreapp3.1\Petshop.Infrastructure.Data.AssemblyInfoInputs.cache
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.Data\obj\Debug\netcoreapp3.1\Petshop.Infrastructure.Data.AssemblyInfo.cs
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.Data\obj\Debug\netcoreapp3.1\Petshop.Infrastructure.Data.csproj.CoreCompileInputs.cache
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.Data\obj\Debug\netcoreapp3.1\Petshop.Infrastructure.Data.csproj.CopyComplete
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.Data\obj\Debug\netcoreapp3.1\Petshop.Infrastructure.Data.dll
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.Data\obj\Debug\netcoreapp3.1\Petshop.Infrastructure.Data.pdb

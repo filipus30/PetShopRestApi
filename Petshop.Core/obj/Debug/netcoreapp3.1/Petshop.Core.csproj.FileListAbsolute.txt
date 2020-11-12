@@ -10,3 +10,15 @@
 /Users/macos/Downloads/PetShopRestApi-master/Petshop.Core/obj/Debug/netcoreapp3.1/Petshop.Core.csproj.CopyComplete
 /Users/macos/Downloads/PetShopRestApi-master/Petshop.Core/obj/Debug/netcoreapp3.1/Petshop.Core.dll
 /Users/macos/Downloads/PetShopRestApi-master/Petshop.Core/obj/Debug/netcoreapp3.1/Petshop.Core.pdb
+D:\C# shared\FilipsPetShopRestApi\Petshop.Core\bin\Debug\netcoreapp3.1\Petshop.Core.deps.json
+D:\C# shared\FilipsPetShopRestApi\Petshop.Core\bin\Debug\netcoreapp3.1\Petshop.Core.dll
+D:\C# shared\FilipsPetShopRestApi\Petshop.Core\bin\Debug\netcoreapp3.1\Petshop.Core.pdb
+D:\C# shared\FilipsPetShopRestApi\Petshop.Core\bin\Debug\netcoreapp3.1\Petshop.Core.Entity.dll
+D:\C# shared\FilipsPetShopRestApi\Petshop.Core\bin\Debug\netcoreapp3.1\Petshop.Core.Entity.pdb
+D:\C# shared\FilipsPetShopRestApi\Petshop.Core\obj\Debug\netcoreapp3.1\Petshop.Core.csprojAssemblyReference.cache
+D:\C# shared\FilipsPetShopRestApi\Petshop.Core\obj\Debug\netcoreapp3.1\Petshop.Core.AssemblyInfoInputs.cache
+D:\C# shared\FilipsPetShopRestApi\Petshop.Core\obj\Debug\netcoreapp3.1\Petshop.Core.AssemblyInfo.cs
+D:\C# shared\FilipsPetShopRestApi\Petshop.Core\obj\Debug\netcoreapp3.1\Petshop.Core.csproj.CoreCompileInputs.cache
+D:\C# shared\FilipsPetShopRestApi\Petshop.Core\obj\Debug\netcoreapp3.1\Petshop.Core.csproj.CopyComplete
+D:\C# shared\FilipsPetShopRestApi\Petshop.Core\obj\Debug\netcoreapp3.1\Petshop.Core.dll
+D:\C# shared\FilipsPetShopRestApi\Petshop.Core\obj\Debug\netcoreapp3.1\Petshop.Core.pdb

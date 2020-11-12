@@ -1954,40 +1954,42 @@
     ]
   },
   "packageFolders": {
-    "/Users/macos/.nuget/packages/": {}
+    "C:\\Users\\cille\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/macos/Downloads/PetShopRestApi-master/Petshop.RestAPI/Petshop.RestAPI.csproj",
+      "projectUniqueName": "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.RestAPI\\Petshop.RestAPI.csproj",
       "projectName": "Petshop.RestAPI",
-      "projectPath": "/Users/macos/Downloads/PetShopRestApi-master/Petshop.RestAPI/Petshop.RestAPI.csproj",
-      "packagesPath": "/Users/macos/.nuget/packages/",
-      "outputPath": "/Users/macos/Downloads/PetShopRestApi-master/Petshop.RestAPI/obj/",
+      "projectPath": "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.RestAPI\\Petshop.RestAPI.csproj",
+      "packagesPath": "C:\\Users\\cille\\.nuget\\packages\\",
+      "outputPath": "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.RestAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/macos/.config/NuGet/NuGet.Config"
+        "C:\\Users\\cille\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "/Users/macos/Downloads/PetShopRestApi-master/Petshop.Core.Entity/Petshop.Core.Entity.csproj": {
-              "projectPath": "/Users/macos/Downloads/PetShopRestApi-master/Petshop.Core.Entity/Petshop.Core.Entity.csproj"
+            "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.Core.Entity\\Petshop.Core.Entity.csproj": {
+              "projectPath": "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.Core.Entity\\Petshop.Core.Entity.csproj"
             },
-            "/Users/macos/Downloads/PetShopRestApi-master/Petshop.Core/Petshop.Core.csproj": {
-              "projectPath": "/Users/macos/Downloads/PetShopRestApi-master/Petshop.Core/Petshop.Core.csproj"
+            "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.Core\\Petshop.Core.csproj": {
+              "projectPath": "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.Core\\Petshop.Core.csproj"
             },
-            "/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/Petshop.Infrastructure.Data.csproj": {
-              "projectPath": "/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.Data/Petshop.Infrastructure.Data.csproj"
+            "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.Infrastructure.Data\\Petshop.Infrastructure.Data.csproj": {
+              "projectPath": "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.Infrastructure.Data\\Petshop.Infrastructure.Data.csproj"
             },
-            "/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/Petshop.Infrastructure.SQL.csproj": {
-              "projectPath": "/Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/Petshop.Infrastructure.SQL.csproj"
+            "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.Infrastructure.SQL\\Petshop.Infrastructure.SQL.csproj": {
+              "projectPath": "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.Infrastructure.SQL\\Petshop.Infrastructure.SQL.csproj"
             }
           }
         }
@@ -2064,7 +2066,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   },

@@ -90,7 +90,10 @@
         },
         "runtime": {
           "bin/placeholder/Petshop.Core.Entity.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -218,31 +221,33 @@
     ]
   },
   "packageFolders": {
-    "/Users/macos/.nuget/packages/": {}
+    "C:\\Users\\cille\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/macos/Downloads/PetShopRestApi-master/Petshop.Core/Petshop.Core.csproj",
+      "projectUniqueName": "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.Core\\Petshop.Core.csproj",
       "projectName": "Petshop.Core",
-      "projectPath": "/Users/macos/Downloads/PetShopRestApi-master/Petshop.Core/Petshop.Core.csproj",
-      "packagesPath": "/Users/macos/.nuget/packages/",
-      "outputPath": "/Users/macos/Downloads/PetShopRestApi-master/Petshop.Core/obj/",
+      "projectPath": "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.Core\\Petshop.Core.csproj",
+      "packagesPath": "C:\\Users\\cille\\.nuget\\packages\\",
+      "outputPath": "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/macos/.config/NuGet/NuGet.Config"
+        "C:\\Users\\cille\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "/Users/macos/Downloads/PetShopRestApi-master/Petshop.Core.Entity/Petshop.Core.Entity.csproj": {
-              "projectPath": "/Users/macos/Downloads/PetShopRestApi-master/Petshop.Core.Entity/Petshop.Core.Entity.csproj"
+            "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.Core.Entity\\Petshop.Core.Entity.csproj": {
+              "projectPath": "D:\\C# shared\\FilipsPetShopRestApi\\Petshop.Core.Entity\\Petshop.Core.Entity.csproj"
             }
           }
         }
@@ -284,11 +289,14 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

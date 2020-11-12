@@ -27,6 +27,7 @@ namespace Petshop.RestAPI.Controllers
             _ownerservice = ownerService;
         }
 
+        [Authorize]
         [HttpGet]
         public ActionResult<IEnumerable<Pet>> Get([FromQuery] FilterModel filter)
         {
@@ -60,7 +61,7 @@ namespace Petshop.RestAPI.Controllers
 
 
 
-        [Authorize]
+        [Authorize (Roles = "Administrator")]
         [HttpGet("{Id}")]
         public ActionResult<Pet> Get(int Id)
         {

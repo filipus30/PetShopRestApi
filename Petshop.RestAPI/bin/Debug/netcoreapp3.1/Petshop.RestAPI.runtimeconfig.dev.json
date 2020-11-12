@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/Users/macos/.dotnet/store/|arch|/|tfm|",
-      "/Users/macos/.nuget/packages"
+      "C:\\Users\\cille\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\cille\\.nuget\\packages"
     ]
   }
 }

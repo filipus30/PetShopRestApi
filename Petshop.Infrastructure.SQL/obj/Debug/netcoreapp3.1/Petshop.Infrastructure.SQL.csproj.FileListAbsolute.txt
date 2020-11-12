@@ -14,3 +14,19 @@
 /Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/obj/Debug/netcoreapp3.1/Petshop.Infrastructure.SQL.csproj.CopyComplete
 /Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/obj/Debug/netcoreapp3.1/Petshop.Infrastructure.SQL.dll
 /Users/macos/Downloads/PetShopRestApi-master/Petshop.Infrastructure.SQL/obj/Debug/netcoreapp3.1/Petshop.Infrastructure.SQL.pdb
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\bin\Debug\netcoreapp3.1\Petshop.Infrastructure.SQL.deps.json
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\bin\Debug\netcoreapp3.1\Petshop.Infrastructure.SQL.dll
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\bin\Debug\netcoreapp3.1\Petshop.Infrastructure.SQL.pdb
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\bin\Debug\netcoreapp3.1\Petshop.Core.dll
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\bin\Debug\netcoreapp3.1\Petshop.Core.Entity.dll
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\bin\Debug\netcoreapp3.1\Petshop.Infrastructure.Data.dll
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\bin\Debug\netcoreapp3.1\Petshop.Core.Entity.pdb
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\bin\Debug\netcoreapp3.1\Petshop.Core.pdb
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\bin\Debug\netcoreapp3.1\Petshop.Infrastructure.Data.pdb
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\obj\Debug\netcoreapp3.1\Petshop.Infrastructure.SQL.csprojAssemblyReference.cache
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\obj\Debug\netcoreapp3.1\Petshop.Infrastructure.SQL.AssemblyInfoInputs.cache
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\obj\Debug\netcoreapp3.1\Petshop.Infrastructure.SQL.AssemblyInfo.cs
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\obj\Debug\netcoreapp3.1\Petshop.Infrastructure.SQL.csproj.CoreCompileInputs.cache
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\obj\Debug\netcoreapp3.1\Petshop.Infrastructure.SQL.csproj.CopyComplete
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\obj\Debug\netcoreapp3.1\Petshop.Infrastructure.SQL.dll
+D:\C# shared\FilipsPetShopRestApi\Petshop.Infrastructure.SQL\obj\Debug\netcoreapp3.1\Petshop.Infrastructure.SQL.pdb
